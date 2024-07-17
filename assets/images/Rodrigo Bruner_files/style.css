@@ -1,0 +1,480 @@
+/* 
+    Define the default values for the variables
+*/
+:root{
+    --default-bg-color: #ffffff;
+    --primary-font-color: #000000;
+
+    --primary-color :#222f3e;
+    --secondary-color:#ffffff;
+    --tertiary-color: #95C01C;
+
+    --page-max-width: 1024px;
+}
+
+
+/* 
+    Define the values for the variables for different screen sizes
+*/
+@media all and (min-width: 1024px) { 
+
+    :root{
+        --h1-font-size: 3em;
+        --h2-font-size: 2em;
+        --h3-font-size: 1.5em;
+        --h4-font-size: 1.0em;
+        --p-font-size:  0.9em;
+        --subTitle-font-size: 0.85em;
+
+        --main-width: 63%;
+        --main-float: left;
+        --aside-width: 33%;
+        --aside-float: right;
+
+        --nav-menu-display: none;
+        --nav-display: block;
+        --nav-flex-direction: row;
+
+        --student-info-display: block;
+    } 
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    :root{
+        --h1-font-size: 3em;
+        --h2-font-size: 2em;
+        --h3-font-size: 1.5em;
+        --h4-font-size: 1.0em;
+        --p-font-size:  1em;
+        --subTitle-font-size: 0.85em;
+
+        --main-width: 63%;
+        --main-float: left;
+        --aside-width: 34%;
+        --aside-float: right;
+        --nav-display: block;
+        --nav-flex-direction: row;
+        --student-info-display: block;
+    } 
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) { 
+    :root{
+        --h1-font-size: 2em;
+        --h2-font-size: 1.5em;
+        --h3-font-size: 1.25em;
+        --h4-font-size: 1.0em;
+        --p-font-size:  1em;
+        --subTitle-font-size: 0.85em;
+        --main-width: 97%;
+        --main-float: none;
+        --aside-width: 97%;
+        --aside-float: none;
+        --student-info-display: block;
+    } 
+}
+
+@media all and (max-width: 480px) {
+    :root{
+        --h1-font-size: 2em;
+        --h2-font-size: 1.5em;
+        --h3-font-size: 1.25em;
+        --h4-font-size: 1.0em;
+        --p-font-size:  1.0em;
+        --subTitle-font-size: 0.85em;
+        --main-width: 97%;
+        --main-float: none;
+        --aside-width: 97%;
+        --aside-float: none;
+        --student-info-display: none;
+    } 
+}
+
+
+/* Import Roboto font */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto-Regular.ttf'); 
+    src: url('../font/Roboto-Regular.ttf') format('embedded-opentype'), 
+    url('r../font/Roboto-Regular.ttf') format('woff'), 
+    url('../font/Roboto-Regular.ttf')  format('truetype'), 
+    url('../font/Roboto-Regular.ttf') format('svg');
+} 
+
+
+/* 
+    GENERAL STYLES 
+*/
+
+ *{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--default-bg-color);
+    color: var(--primary-font-color);
+    font-size: var(--p-font-size);
+    max-width: var(--page-max-width);
+    margin: 30px auto;
+    margin-top: 0;
+}
+
+
+strong{
+    color: var(--primary-color);
+}
+
+p{
+    font-size: var(--p-font-size);
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    font-size: var(--h2-font-size);
+    margin: 0;
+    padding: 0;
+}
+
+h3{
+    font-size: var(--h3-font-size);
+    margin: 0;
+    padding: 0;
+}
+
+h4{
+    font-size: var(--h4-font-size);
+    margin: 0;
+    padding: 0;
+}
+
+
+.notFound{
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    color: #95C01C;
+    text-shadow: 2px 2px 4px gray;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.notFound img{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.notFound h1{
+    font-size: 3em;
+}
+
+
+/*
+    HEADER SECTION
+*/
+
+header{
+    margin: 0;
+    padding: 1vh;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    height: 80px;
+    display: flex;
+    gap: 0px;
+}
+
+#logo{
+    position: absolute;
+    clear: both;
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px #000000;
+    width: 50px;
+    height: 50px;
+    border: var(--tertiary-color);
+    border-style: solid;
+    border-width: 2px;
+    background-color: var(--default-bg-color);  
+    background-image: url("../images/avatar.png");
+    background-size: 40px 40px;
+    background-size: cover;               
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: black;   
+    float: left;
+    margin: 7px;
+}
+
+header h1{
+    width: 70%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    padding: 0;
+    float: left;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
+nav{
+    border-end-start-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--primary-color);
+    border-end-start-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover , .selectedMenu{
+    background-color: var(--tertiary-color);
+}
+
+
+
+
+/*
+    MAIN SECTION
+*/
+
+main{
+    width: var(--main-width);
+    float: var(--main-float);
+    margin-top: 15px;
+}
+
+.card{
+    margin: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px;
+    width: 30%;
+    float: left;
+    border-radius: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card img{
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    margin: 5px auto 0px auto
+}
+
+.card div{
+    font-size: 8pt;
+}
+
+.card div .checked{
+    color: gold;
+}
+
+.card div div{
+    font-size: 12pt;
+    text-align: right;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.card button{
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    padding: 5px;
+    border-radius: 25px;
+}
+
+
+/*
+    ASIDE SECTION
+*/
+aside{
+    margin: 10px;
+    margin-top: 60px;
+    width: var(--aside-width);
+    float: var(--aside-float);
+    padding: 1%;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+aside h2{
+    text-align: center;
+}
+
+aside div h4{
+    color: var(--primary-color);
+    font-size: 13pt;
+    margin: 0;
+    padding: 0;
+
+}
+
+.cartIten{
+    background-color: var(--default-bg-color);
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px;
+    width: 95%;
+    border-radius: 10px;
+}
+
+.cartIten div{
+    text-align: right;
+}
+
+.removeToShoppingCart{
+    background-color: red;
+    color: var(--default-bg-color);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.checkoutButton{
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+aside div img{
+    width: 130px;
+    margin-right: 10px;
+    float: left;
+}
+
+.provinceSelect{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.provinceSelect select{
+    font-size: 14px;
+    padding: 5px 10px;
+    width: 170px;
+    height: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#welcome img, #thankyou img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/*
+    FOOTER SECTION
+*/
+#pageForm, #pageCheckout, #thankyou{
+    display: none;
+}
+
+footer{
+    background-color: var(--primary-color); 
+    width: var(--page-width);
+    color: var(--tertiary-color);
+    text-align: center;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    position: relative;
+    clear: both;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/*
+    FORM
+*/
+
+label{
+    width: 100px;
+    display: inline-block;
+    color: var(--primary-color);
+}
+label.radioLabel{
+    width: 30px;
+}
+input, select{
+    font-size: 14px;
+    padding: 5px 10px;
+    width: 170px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+select.textInput{
+    width: 190px;
+    margin-top: 10px;
+    height: 40px;
+}
+
+form button{
+    width: 100%;
+    font-size: 15;
+    background-color: var(--primary-color);
+    color: white;
+    border: 0px;
+    padding: 10px;
+    height: 50px;
+    box-shadow: 4px 4px 0px var(--primary-color);
+    border-radius: 8px;
+}
+form button:active{
+    box-shadow: -4px -4px 0px var(--primary-color);
+}
+
+form #date, form #ccv{
+    width: 79px;
+
+}
+
+#formErrors{
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#formErrors h4{
+    color: red;
+}

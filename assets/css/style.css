@@ -1,0 +1,460 @@
+/* 
+    Define the default values for the variables
+*/
+:root{
+    --default-bg-color: #ffffff;
+    --primary-font-color: #000000;
+
+    --primary-color :#222f3e;
+    --secondary-color:#ffffff;
+    --tertiary-color: #95C01C;
+
+    --page-max-width: 1024px;
+}
+
+
+/* 
+    Define the values for the variables for different screen sizes
+*/
+@media all and (min-width: 1024px) { 
+
+    :root{
+        --h1-font-size: 3em;
+        --h2-font-size: 2em;
+        --h3-font-size: 1.5em;
+        --h4-font-size: 1.0em;
+        --p-font-size:  0.9em;
+        --subTitle-font-size: 0.85em;
+
+        --main-width: 63%;
+        --main-float: left;
+        --aside-width: 33%;
+        --aside-float: right;
+
+        --nav-menu-display: none;
+        --nav-display: block;
+        --nav-flex-direction: row;
+
+        --student-info-display: block;
+    } 
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    :root{
+        --h1-font-size: 3em;
+        --h2-font-size: 2em;
+        --h3-font-size: 1.5em;
+        --h4-font-size: 1.0em;
+        --p-font-size:  1em;
+        --subTitle-font-size: 0.85em;
+
+        --main-width: 63%;
+        --main-float: left;
+        --aside-width: 34%;
+        --aside-float: right;
+        --nav-display: block;
+        --nav-flex-direction: row;
+        --student-info-display: block;
+    } 
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) { 
+    :root{
+        --h1-font-size: 2em;
+        --h2-font-size: 1.5em;
+        --h3-font-size: 1.25em;
+        --h4-font-size: 1.0em;
+        --p-font-size:  1em;
+        --subTitle-font-size: 0.85em;
+        --main-width: 97%;
+        --main-float: none;
+        --aside-width: 97%;
+        --aside-float: none;
+        --student-info-display: block;
+    } 
+}
+
+@media all and (max-width: 480px) {
+    :root{
+        --h1-font-size: 2em;
+        --h2-font-size: 1.5em;
+        --h3-font-size: 1.25em;
+        --h4-font-size: 1.0em;
+        --p-font-size:  1.0em;
+        --subTitle-font-size: 0.85em;
+        --main-width: 97%;
+        --main-float: none;
+        --aside-width: 97%;
+        --aside-float: none;
+        --student-info-display: none;
+    } 
+}
+
+
+/* Import Roboto font */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto-Regular.ttf'); 
+    src: url('../font/Roboto-Regular.ttf') format('embedded-opentype'), 
+    url('r../font/Roboto-Regular.ttf') format('woff'), 
+    url('../font/Roboto-Regular.ttf')  format('truetype'), 
+    url('../font/Roboto-Regular.ttf') format('svg');
+} 
+
+
+/* 
+    GENERAL STYLES 
+*/
+
+ *{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--default-bg-color);
+    color: var(--primary-font-color);
+    font-size: var(--p-font-size);
+    max-width: var(--page-max-width);
+    margin: 30px auto;
+    margin-top: 0;
+}
+
+
+strong{
+    color: var(--primary-color);
+}
+
+p{
+    font-size: var(--p-font-size);
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    font-size: var(--h2-font-size);
+    margin: 0;
+    padding: 0;
+}
+
+h3{
+    font-size: var(--h3-font-size);
+    margin: 0;
+    padding: 0;
+}
+
+h4{
+    font-size: var(--h4-font-size);
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    margin: 0;
+    padding: 15px;
+}
+
+hr{
+    border: 0;
+    height: 2px;
+    background: var(--tertiary-color);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    padding: 5px;
+    text-align: left;
+}
+
+th, td{
+    border: 1px solid var(--primary-color);
+    padding: 5px;
+    text-align: left;
+}
+
+/*
+    UTIL STYLES
+*/
+.w30{
+    width: 30%;
+    float: left;
+}
+
+.w50{
+    width: 50%;
+    float: left;
+}
+
+.w70{
+    width: 70%;
+    float: left;
+}
+
+.w100{
+    width: 100%;
+}
+
+.fl{
+    float: left;
+}
+
+.imgCard{
+    padding: 1%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+/*
+    NOT FOUND SECTION
+*/
+
+.notFound{
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+   
+    text-shadow: 2px 2px 4px gray;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.notFound img{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.notFound h1, .notFound a{
+    font-size: 3em;
+    color: #95C01C;
+}
+
+.notFound a:hover{
+    color: #95C01C;
+    text-decoration: none;
+}
+
+
+/*
+    HEADER SECTION
+*/
+
+header{
+    margin: 0;
+    padding: 1vh;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    height: 80px;
+    display: flex;
+    gap: 0px;
+}
+
+
+
+header h1{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0;
+}
+
+
+nav{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--primary-color);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover , .selectedMenu{
+    background-color: var(--tertiary-color);
+}
+
+.shoppingCart{
+    background-color: #3d546f;
+}
+
+
+
+/*
+    MAIN SECTION
+*/
+
+main{
+    width: var(--main-width);
+    float: var(--main-float);
+    padding: 15px;
+}
+
+.card{
+    margin: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px;
+    width: 31.3%;
+    float: left;
+    border-radius: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card img{
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    margin: 5px auto 15px auto
+}
+
+.card h3{
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.card div{
+    font-size: 8pt;
+}
+
+.card div .checked{
+    color: gold;
+}
+
+.card div div{
+    font-size: 12pt;
+    text-align: right;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.card button{
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.card button:hover{
+    width: 100%;
+    color: var(--primary-color);
+    background-color: var(--tertiary-color);
+    padding: 5px;
+    border-radius: 25px;
+}
+/*
+    FOOTER SECTION
+*/
+
+footer{
+    background-color: var(--primary-color); 
+    width: var(--page-width);
+    color: var(--tertiary-color);
+    text-align: center;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    position: relative;
+    clear: both;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/*
+    FORM
+*/
+.redButton{
+    background-color: red;
+    color: white;
+    border: 0px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0px var(--primary-color);
+}
+
+.redButton:hover{
+    background-color: #DC143C;
+}
+
+.greenButton{
+    background-color: var(--tertiary-color);
+    color: white;
+    border: 0px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0px var(--primary-color);
+}
+
+.greenButton:hover{
+    background-color: #2dbe01;
+}
+
+label{
+    width: 100%;
+    padding: 5px;
+    display: inline-block;
+    color: var(--primary-color);
+    display: block;
+}
+
+input, select{
+    border-color: var(--primary-color);
+    font-size: 14px;
+    padding: 5px 10px;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+select.textInput{
+    width: 190px;
+    margin-top: 10px;
+    height: 40px;
+}
+
+
+.error, .error hr{
+    border: 1px solid red;	
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
