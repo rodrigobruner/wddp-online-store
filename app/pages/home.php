@@ -5,6 +5,9 @@ include('components/navbar.php');
 ?>
 <main class="w100">
     <?php 
+        if(isset($_SESSION["userName"])){
+            echo "<h3>Welcome ".$_SESSION["userName"]."!</h3>";
+        }
         $products = Inventary::getProducts();
         foreach ($products as $product) {
             if($product != false) { ?>

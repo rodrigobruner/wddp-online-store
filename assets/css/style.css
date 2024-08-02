@@ -183,6 +183,11 @@ th, td{
 /*
     UTIL STYLES
 */
+
+.text-center{
+    text-align: center;
+}
+
 .w30{
     width: 30%;
     float: left;
@@ -454,7 +459,17 @@ select.textInput{
 
 .error, .error hr{
     border: 1px solid red;	
+    padding: 10px;
     color: red;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+
+.success{
+    border: 1px solid green;	
+    padding: 10px;
+    color: green;
+    margin-top: 5px;
+    margin-bottom: 5px; 
 }
