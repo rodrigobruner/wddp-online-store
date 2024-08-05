@@ -11,7 +11,7 @@ include('components/navbar.php');
         $products = Inventary::getProducts();
         foreach ($products as $product) {
             if($product != false) { ?>
-                <div class="card">
+                <div class="card" style="width: 31.3%;float:left;">
                     <img src="assets/images/<?php echo $product->image ?>" alt="Kermit" class="imgCard w70">
                     <h3><?php echo $product->name ?></h3>
                     <p><?php echo $product->description ?></p>
@@ -22,7 +22,7 @@ include('components/navbar.php');
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
                         <a href="#">10 Reviews</a>
-                        <div><?php echo $product->price ?></div>
+                        <div>$<?php echo $product->price ?></div>
                     </div>
                     <button onClick="window.location.href='/ShoppingCart?product=<?php echo $product->id?>'">Buy now</button>
                 </div>

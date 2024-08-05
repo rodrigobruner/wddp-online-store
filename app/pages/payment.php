@@ -5,6 +5,18 @@
 
     $province = $_GET["province"] ?? "Ontario";
     $error = @$_GET['error'] ?? false;
+
+    if(!isset($_SESSION['userId'])){
+        header('Location:/Login?error=You need to login to pay');
+    }
+
+    $userID = @$_SESSION['userId'];
+    $sqlQuery = "SELECT * FROM user WHERE id = $userID";
+    $db = DB::getConection();
+    $sqlResult = $db->query($sqlQuery);
+    while ($row = $sqlResult->fetch_assoc()) {
+        $user = $row;
+    }
 ?>
 <main id="pageContac" class="w100">
     <div class="w50">
@@ -17,7 +29,18 @@
             </ul>
         </div>
     <?php } ?>
-    <h3>User info</h3>
+    <h3>Shipping info</h3>
+    <div style="margin:10px">
+    <P><input type="radio" value="1" checked> <strong>Shipping address</strong></P>
+        <div style="margin-left:10px">
+            <P><strong>Postcode:</strong> <?php echo $user['postcode'] ?></P>
+            <P><strong>Address:</strong> <?php echo $user['address']?></P>
+            <P><strong>City:</strong> <?php echo $user['city']?></P>
+            <P><strong>State:</strong> <?php echo $user['province']?></P>
+            <br>
+            <P><input type="checkbox" value="1" checked> <strong>Billing address</strong></P>
+        </div>
+    </div>
     <form action="/Shipping" method="POST">
         <h3>Payment</h3>
         <label for="card">Card</label>

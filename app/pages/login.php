@@ -18,18 +18,17 @@
 
             <?php 
                 if(! is_null(@$_GET["error"])){
-                    echo "<p class='error'>".@$_GET["error"]."</p>";
+                    echo "<p class='error'><span class='fa fa-warning'></span> ".@$_GET["error"]."</p>";
                 }
             ?>
             
-            <input type="submit" value="Login">
+            <input type="submit" value="Login" class="greenButton">
 
         </form>
-        <div id="target"></div>
+        <div class="divider"><p>OR</p></div>
         <div class="text-center">
-            <a href="/New">Create a new account</a>
+            <a class="custom-btn" href="/New">Create a new account</a>
         </div>
-        
     </div>
     <img src="assets/images/kermit-login.jpg" alt="Contact kermet" class="imgCard w70">
 </main>

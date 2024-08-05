@@ -1,5 +1,24 @@
 
+
 $(document).ready(function() {
+    $('#formError').hide();
+    $('#formResult').hide();
+
+    $( function() {
+        $( "#accordion" ).accordion();
+    } );
+
+    
+    $("#showAddresInfo").click(function(){
+        $("#userInfo").slideToggle();
+        $("#addressInfo").slideToggle();
+    });
+
+    $("#showUserInfo").click(function(){
+        $("#userInfo").slideToggle();
+        $("#addressInfo").slideToggle();
+    });
+
     $("#createUser").on('submit', function(e) {
         e.preventDefault();
 

@@ -4,7 +4,7 @@ Class DB{
     public static function getConection(){
         $servername = 'localhost';  //'127.0.0.1'; // our server is local
         $username = 'root';         // db userna
-        $password = '';             // db password
+        $password = 'root';             // db password
         $dbname = 'kermet_store';   // DB name
 
         return new mysqli($servername, $username, $password, $dbname);
